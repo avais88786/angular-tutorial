@@ -1,11 +1,16 @@
-<mat-list style="margin:5px;" class="heroes">
-    <mat-list-item *ngFor="let hero of heroes" style="margin-bottom:5px;">
-        <button color="primary" mat-raised-button (click)="selectHero(hero)" [class.selected]="hero === selectedHero"
-            matBadge="{{hero.id}}" matBadgeColor="accent">
-            {{hero.name}}
-        </button>
-    </mat-list-item>
+<div *ngIf="!heroesLoaded">
+    <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
+</div>
+<div *ngIf="heroesLoaded">
+    <mat-list style="margin:5px;" class="heroes">
+        <mat-list-item *ngFor="let hero of heroes" style="margin-bottom:5px;">
+            <button color="primary" mat-raised-button (click)="selectHero(hero)"
+                [class.selected]="hero === selectedHero" matBadge="{{hero.id}}" matBadgeColor="accent">
+                {{hero.name}}
+            </button>
+        </mat-list-item>
 
-</mat-list>
+    </mat-list>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>
