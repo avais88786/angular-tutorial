@@ -1,1 +1,11 @@
-<p>heroes works!</p>
+<mat-list style="margin:5px;" class="heroes">
+    <mat-list-item *ngFor="let hero of heroes" style="margin-bottom:5px;">
+        <button color="primary" mat-raised-button (click)="selectHero(hero)" [class.selected]="hero === selectedHero"
+            matBadge="{{hero.id}}" matBadgeColor="accent">
+            {{hero.name}}
+        </button>
+    </mat-list-item>
+
+</mat-list>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
