@@ -9,9 +9,11 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroService } from './services/hero.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { HeroesDashboardComponent } from './components/heroes-dashboard/heroes-dashboard.component';
 
 @NgModule({
-  declarations: [HeroesComponent, HeroDetailComponent],
+  declarations: [HeroesComponent, HeroDetailComponent, LandingPageComponent, HeroesDashboardComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -21,9 +23,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatProgressSpinnerModule,
     TourOfHeroesRouting
   ],
-  exports: [
-    HeroesComponent
-  ],
+  exports: [],
   providers: [HeroService]
 })
 export class TourOfHeroesModule { }

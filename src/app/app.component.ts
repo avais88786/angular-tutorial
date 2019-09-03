@@ -8,7 +8,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'tour-of-heroes';
   hideLandingPage = false;
-  countdownTimer = 3;
+  countdownTimer = 2;
   constructor() { }
 
   ngAfterViewInit() {
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     setTimeout(() => {
       clearInterval(x);
-    }, 3000);
+    }, 2000);
   }
 
   ngOnInit() {
