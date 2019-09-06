@@ -24,6 +24,6 @@ import { HeroesDashboardComponent } from './components/heroes-dashboard/heroes-d
     TourOfHeroesRouting
   ],
   exports: [],
-  providers: [HeroService]
+  providers: []
 })
 export class TourOfHeroesModule { }

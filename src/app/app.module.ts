@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     NoopAnimationsModule,
     TemplateModule,
-    TourOfHeroesModule,
+    // TourOfHeroesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
