@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { HeroService } from './modules/tour-of-heroes/services/hero.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   title = 'tour-of-heroes';
   hideLandingPage = false;
   countdownTimer = 2;
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
   ngAfterViewInit() {
     const x = setInterval(() => {
