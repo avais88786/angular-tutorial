@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '@environment/environment';
 
 @Component({
   selector: 'app-heroes-landing-page',
@@ -10,6 +11,7 @@ export class LandingPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    alert(environment.production);
   }
 
 }
