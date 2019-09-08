@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'tour-of-heroes',
     loadChildren: () => import('./modules/tour-of-heroes/tour-of-heroes.module').then(mod => mod.TourOfHeroesModule)
+  },
+  {
+    path: 'ads',
+    loadChildren: () => import('../../projects/app-ads-tutorial/src/app/app.module').then(mod => mod.AppModule)
   }
 ];
 

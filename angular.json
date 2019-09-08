@@ -129,6 +129,128 @@
           }
         }
       }
+    },
+    "app-ads-tutorial": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-ads-tutorial",
+      "sourceRoot": "projects/app-ads-tutorial/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-ads-tutorial",
+            "index": "projects/app-ads-tutorial/src/index.html",
+            "main": "projects/app-ads-tutorial/src/main.ts",
+            "polyfills": "projects/app-ads-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/app-ads-tutorial/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/app-ads-tutorial/src/favicon.ico",
+              "projects/app-ads-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/app-ads-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-ads-tutorial/src/environments/environment.ts",
+                  "with": "projects/app-ads-tutorial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-ads-tutorial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-ads-tutorial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-ads-tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-ads-tutorial/src/test.ts",
+            "polyfills": "projects/app-ads-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/app-ads-tutorial/tsconfig.spec.json",
+            "karmaConfig": "projects/app-ads-tutorial/karma.conf.js",
+            "assets": [
+              "projects/app-ads-tutorial/src/favicon.ico",
+              "projects/app-ads-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/app-ads-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-ads-tutorial/tsconfig.app.json",
+              "projects/app-ads-tutorial/tsconfig.spec.json",
+              "projects/app-ads-tutorial/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-ads-tutorial/e2e/protractor.conf.js",
+            "devServerTarget": "app-ads-tutorial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-ads-tutorial:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "tour-of-heroes"
