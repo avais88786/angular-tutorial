@@ -2,7 +2,7 @@
 <h4>{{data.name}}</h4>
 <span style="color: red">Steps:</span>
     <ul>
-        <li *ngFor="let step in data.steps">
+        <li *ngFor="let step of data.steps">
             {{step}}
         </li>
     </ul>

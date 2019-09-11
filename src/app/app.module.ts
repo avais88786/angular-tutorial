@@ -18,7 +18,7 @@ import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-
     TemplateModule,
     // TourOfHeroesModule,
     //adsModule
-    AdsSharedModule.forRoot()
+    //AdsSharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
 import { AdCarComponent } from './components/ad-car/ad-car.component';
 import { AdFoodComponent } from './components/ad-food/ad-food.component';
 import { AdHostDirective } from './directives/ad-host.directive';
+import { AdHoverDirective } from './directives/ad-hover.directive';
 
 @NgModule({
   declarations: [
@@ -15,20 +16,22 @@ import { AdHostDirective } from './directives/ad-host.directive';
     AdBannerComponent,
     AdCarComponent,
     AdFoodComponent,
-    AdHostDirective
+    AdHostDirective,
+    AdHoverDirective
   ],
   imports: [
     //BrowserModule,
     CommonModule,
     AppRoutingModule
   ],
+  entryComponents: [AdCarComponent, AdFoodComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
 @NgModule({})
-export class AdsSharedModule{
+export class AdsSharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppModule,

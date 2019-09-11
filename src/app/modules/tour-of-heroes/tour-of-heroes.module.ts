@@ -11,10 +11,13 @@ import { HeroService } from './services/hero.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HeroesDashboardComponent } from './components/heroes-dashboard/heroes-dashboard.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HeroesComponent, HeroDetailComponent, LandingPageComponent, HeroesDashboardComponent],
+  declarations: [HeroesComponent, HeroDetailComponent, LandingPageComponent, HeroesDashboardComponent, ReactiveFormComponent],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     MatCardModule,
     MatListModule,

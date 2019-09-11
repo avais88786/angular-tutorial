@@ -27,11 +27,11 @@ export class AdServiceService {
       },
       {
         component: AdFoodComponent,
-        data: {name: `Food-${casual.word}`, steps: casual.sentences(7)}
+        data: {name: `Food-${casual.word}`, steps: casual.array_of_words(7)}
       },
       {
         component: AdFoodComponent,
-        data: {name: `Food-${casual.word}`, steps: casual.sentences(5)}
+        data: {name: `Food-${casual.word}`, steps: casual.array_of_words(5)}
       }
     ];
   }
