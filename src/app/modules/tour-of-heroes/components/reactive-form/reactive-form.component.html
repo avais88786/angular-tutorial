@@ -1,4 +1,5 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <h3>Reactive Form</h3>
     <div>
         <label>
             First Name:
@@ -33,7 +34,6 @@
           </div>
 
     <button type="submit">Submit</button>
-
+    <span>{{formValue | json }}</span>
 </form>
 
-<span>{{formValue | json }}</span>

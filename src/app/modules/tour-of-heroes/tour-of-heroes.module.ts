@@ -12,11 +12,19 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HeroesDashboardComponent } from './components/heroes-dashboard/heroes-dashboard.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [HeroesComponent, HeroDetailComponent, LandingPageComponent, HeroesDashboardComponent, ReactiveFormComponent],
+  declarations: [HeroesComponent,
+    HeroDetailComponent,
+    LandingPageComponent,
+    HeroesDashboardComponent,
+    ReactiveFormComponent,
+    TemplateFormComponent],
   imports: [
+    FormsModule,
     ReactiveFormsModule,
     CommonModule,
     MatCardModule,
@@ -24,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatBadgeModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
     TourOfHeroesRouting
   ],
   exports: [],

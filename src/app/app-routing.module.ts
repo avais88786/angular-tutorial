@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'ads',
     loadChildren: () => import('../../projects/app-ads-tutorial/src/app/app.module').then(mod => mod.AppModule)
+  },
+  {
+    path: 'observables',
+    loadChildren: () => import('./modules/observables/observables.module').then(mod => mod.ObservablesModule)
   }
 ];
 

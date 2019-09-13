@@ -9,7 +9,7 @@ import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
