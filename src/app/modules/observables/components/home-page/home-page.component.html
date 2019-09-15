@@ -1,7 +1,31 @@
-<div class="container">
+<div class="container" style="display: inline">
     <mat-card>
         <mat-card-title>Simple Observable</mat-card-title>
         <mat-card-content>{{simpleObservable}}</mat-card-content>
         <mat-card-footer>Observer next's some number sequence</mat-card-footer>
+    </mat-card>
+
+    <mat-card (click)="startListeningEventMovement($event)">
+        <mat-card-title>fromEvent RXJS Observable</mat-card-title>
+        <mat-card-content>Mouse X: {{mouseX}}. Mouse Y: {{mouseY}}</mat-card-content>
+        <mat-card-footer>Observer next's some number sequence</mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-title>Map and Pipe</mat-card-title>
+        <mat-card-content>{{oddNumberSquares}}<br/>{{evenNumberSquares}}</mat-card-content>
+        <mat-card-footer>Odd & Even number squared</mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-title>Pipe and Catch</mat-card-title>
+        <mat-card-content>{{observableString}}</mat-card-content>
+        <mat-card-footer>Throw and collect Errors</mat-card-footer>
+    </mat-card>
+    
+    <mat-card>
+        <mat-card-title>Pipe, Error & Retry</mat-card-title>
+        <mat-card-content>{{observableRetryString}}</mat-card-content>
+        <mat-card-footer>&&&</mat-card-footer>
     </mat-card>
 </div>
