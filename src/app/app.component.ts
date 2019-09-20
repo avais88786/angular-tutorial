@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HeroService } from './modules/tour-of-heroes/services/hero.service';
+import { ActivatedRoute, UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   title = 'tour-of-heroes';
   hideLandingPage = false;
   countdownTimer = 2;
-  constructor(private heroService: HeroService) { }
+  urlDetails: UrlSegment[] = [];
+  constructor(private heroService: HeroService,
+              private activateRoute: ActivatedRoute) { }
 
   ngAfterViewInit() {
     const x = setInterval(() => {
@@ -26,7 +29,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
+    
+    this.activateRoute.url.subscribe(url => {
+      this.urlDetails = url;
+    });
+    this.urlDetails = this.activateRoute.snapshot.url;
   }
 
 }

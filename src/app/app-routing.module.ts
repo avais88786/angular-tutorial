@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'observables',
     loadChildren: () => import('./modules/observables/observables.module').then(mod => mod.ObservablesModule)
+  },
+  {
+    path: 'di',
+    loadChildren: () => import('./modules/dependency-injection/dependency-injection.module').then(mod => mod.DependencyInjectionModule)
   }
 ];
 

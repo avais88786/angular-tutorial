@@ -13,7 +13,7 @@
 
     <mat-card>
         <mat-card-title>Map and Pipe</mat-card-title>
-        <mat-card-content>{{oddNumberSquares}}<br/>{{evenNumberSquares}}</mat-card-content>
+        <mat-card-content>{{oddNumberSquares}}<br />{{evenNumberSquares}}</mat-card-content>
         <mat-card-footer>Odd & Even number squared</mat-card-footer>
     </mat-card>
 
@@ -22,10 +22,23 @@
         <mat-card-content>{{observableString}}</mat-card-content>
         <mat-card-footer>Throw and collect Errors</mat-card-footer>
     </mat-card>
-    
+
     <mat-card>
         <mat-card-title>Pipe, Error & Retry</mat-card-title>
         <mat-card-content>{{observableRetryString}}</mat-card-content>
+        <mat-card-footer>&&&</mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-title>Type Ahead</mat-card-title>
+        <mat-card-content>
+            <input type="text" placeholder="type upto 3 characters" id="searchBox"/>
+            <ul>
+                <li *ngFor="let word of suggestedWords">
+                    {{word}}
+                </li>
+            </ul>
+        </mat-card-content>
         <mat-card-footer>&&&</mat-card-footer>
     </mat-card>
 </div>

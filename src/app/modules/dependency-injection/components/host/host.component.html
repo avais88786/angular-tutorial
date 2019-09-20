@@ -1,0 +1,13 @@
+<h2>using @Host Resolution Modifier</h2>
+<p> Using @Host modifier asks angular to look into this components Metadata info as last option while trying to resolve dependency.
+    Even if there are more parents to traverse or other methods angular wont search any further and return any
+    defined providers in component metadata or error if nothing defined in this components metadata.
+    If there were children from this components and their dependency resolution would bring angular to this component, angular wont go any further.
+    Can be combined with @Optional()
+</p>
+<div>
+    Original value of emoji coming from leaf service implementation: {{mainLeaf.emoji}}
+</div>
+<div>
+    Overriden value of emoji, overriden in this components metadata info: {{leaf.emoji}}
+</div>

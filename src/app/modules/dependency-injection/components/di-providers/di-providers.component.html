@@ -1,0 +1,65 @@
+<h2>
+    DI Providers
+</h2>
+<div style="border: 2px solid black;padding:2px;margin:5px;">
+    <h4>
+        Getting value using Aliased class provider:
+    </h4>
+    <p>
+        Two providers exist, NewLoggerService and OldLoggerService, whevever an instance of OldLoggerService is
+        requested, a NewLoggerService instance is returned instead.<br />
+        Value of getLogMessage from oldMessageLogger is : <span
+            style="color: red"><b>{{loggerService.getLogMessage()}}</b></span>
+    </p>
+
+    <p style="margin-top: 5px;">
+        Although angular does not support dependency injecting of an interface (javascript does not know what an
+        interface is)
+        If defined in TypeScript an interface 'ILogger', we can define provider in module such that when something
+        requests an implementation instance
+        of this interface, a concrete implementation is injected.<br />
+        Value from iLogger : <span style="color: red"><b>{{iLogger.getLogMessageFromInterface()}}</b></span>
+    </p>
+
+    <h4>
+        Getting value using useValue provider:
+    </h4>
+    <p style="margin-top: 5px;">
+        use ‘useValue’ if your stub is a object, ‘useClass’ if your stub is a class. The only difference is ‘useClass’
+        does the whole instantiation process necessary for using a class.
+        https://angular.io/guide/dependency-injection-in-action#useclassthe-class-provider <br />
+
+        Here, an interface is injected with useValue Provider, the value of useValue provider is an object, one can use
+        useClass here but then angular instantiates the class
+        Value from ILoggerWithUseValue: <span style="color: red"><b>{{iLoggerWithValue.log()}}</b></span>
+    </p>
+
+    <h4>
+        Using Service Provider factories:
+    </h4>
+    <p style="margin-top: 5px;">
+        Value coming from an interface which is implemented by multiple concrete implementations.
+        NgModule uses factory to provide an instance relevant at runtime. <br />
+        Value from serviceWithFactoryprovider: <span
+            style="color: red"><b>{{serviceWithFactoryprovider1.getValue()}}</b></span>
+    </p>
+
+    <h4>
+        Using 'multi:true in provider token'
+    </h4>
+    <p style="margin-top: 5px;">
+        By using <br />
+        <span style="color: blueviolet">
+            &#123; provide: 'MultiInstances', useExisting: NewLoggerService, multi: true &#125; <br />
+            &#123; provide: 'MultiInstances', useExisting: OldLoggerService, multi: true &#125;
+        </span><br />
+        we are saying there are multiple instances to be injected if someone requests injector with a token
+        'MultiInstances' <br />
+        Length of injected instances for token 'MultiInstances': <span
+            style="color:red"><b>{{multiInstances.length}}</b></span>
+
+    </p>
+
+
+
+</div>
