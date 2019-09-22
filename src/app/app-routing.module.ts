@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'di',
     loadChildren: () => import('./modules/dependency-injection/dependency-injection.module').then(mod => mod.DependencyInjectionModule)
+  },
+  {
+    path: 'httpOps',
+    loadChildren: () => import('./modules/my-httpclient/my-httpclient.module').then(mod => mod.MyHttpclientModule)
   }
 ];
 

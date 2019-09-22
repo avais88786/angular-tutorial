@@ -11,6 +11,10 @@ import { NewLoggerService } from './services/new-logger.service';
 import { Logger } from './services/iLogger';
 import { OldLoggerService } from './services/old-logger.service';
 import { ServiceWithFactoryproviderService, factoryProviderService } from './services/service-with-factoryprovider.service';
+import { NavParentComponent } from './components/nav-parent/nav-parent.component';
+import { NavChild1Component } from './components/nav-child1/nav-child1.component';
+import { NavChild2Component } from './components/nav-child2/nav-child2.component';
+import { NavChild3Component } from './components/nav-child3/nav-child3.component';
 
 const silentLogger = {
   logs: ['Silent logger says "Shhhhh!". Provided via "useValue"'],
@@ -25,7 +29,17 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [OptionalComponent, LandingPageComponent, SelfNoDataComponent, SelfDataComponent, HostComponent, DiProvidersComponent],
+  declarations: [
+    OptionalComponent,
+    LandingPageComponent,
+    SelfNoDataComponent,
+    SelfDataComponent,
+    HostComponent,
+    DiProvidersComponent,
+    NavParentComponent,
+    NavChild1Component,
+    NavChild2Component,
+    NavChild3Component],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

@@ -5,6 +5,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TemplateModule } from './modules/template/template.module';
 import { TourOfHeroesModule } from './modules/tour-of-heroes/tour-of-heroes.module';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-tutorial/src/app/app.module';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-
     AppRoutingModule,
     NoopAnimationsModule,
     TemplateModule,
+    HttpClientModule
     // TourOfHeroesModule,
     //adsModule
     //AdsSharedModule.forRoot()
