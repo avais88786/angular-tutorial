@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { switchMap, catchError } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 
 export interface ConfigData {
@@ -19,6 +21,8 @@ export class LandingPageComponent implements OnInit {
   simpleData: string;
   fullHttpResponse = { keys: [], data: null };
 
+  nonJsonData: string;
+
   constructor(private httpClient: HttpClient) {
 
   }
@@ -26,6 +30,18 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
     this.loadSimpleData();
     this.loadFullResponse();
+    this.loadNonJsonData();
+  }
+
+  loadNonJsonData() {
+    this.httpClient.get<ConfigData>(this.config)
+      .pipe(
+        switchMap<ConfigData, Observable<string>>(conf => this.httpClient.get(conf.file, {responseType : 'text'})),
+        catchError((err: HttpErrorResponse) => of(err.message))
+      ).subscribe(
+        fileData => {this.nonJsonData = fileData; }
+        ,
+        err => {this.nonJsonData = JSON.stringify(err); });
   }
 
   loadFullResponse() {
