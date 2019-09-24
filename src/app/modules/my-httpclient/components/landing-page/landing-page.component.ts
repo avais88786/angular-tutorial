@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { switchMap, catchError } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
 
 export interface ConfigData {
@@ -23,6 +23,9 @@ export class LandingPageComponent implements OnInit {
 
   nonJsonData: string;
 
+  resultWithHttpHeader: string;
+
+
   constructor(private httpClient: HttpClient) {
 
   }
@@ -31,17 +34,42 @@ export class LandingPageComponent implements OnInit {
     this.loadSimpleData();
     this.loadFullResponse();
     this.loadNonJsonData();
+    this.loadSimpleDataWithHeader();
+  }
+  loadSimpleDataWithHeader() {
+    const httpOpts = {
+      headers: new HttpHeaders({
+        'Content-Type': 'xml',
+        'Authorization': 'my-auth'
+      })
+    };
+
+    httpOpts.headers.set('Authorization', 'new-auth');
+
+    this.httpClient.get<ConfigData>(this.config, httpOpts)
+      .subscribe(data => this.resultWithHttpHeader = JSON.stringify(data));
+
   }
 
   loadNonJsonData() {
     this.httpClient.get<ConfigData>(this.config)
       .pipe(
-        switchMap<ConfigData, Observable<string>>(conf => this.httpClient.get(conf.file, {responseType : 'text'})),
-        catchError((err: HttpErrorResponse) => of(err.message))
+        switchMap<ConfigData, Observable<string>>(conf => this.httpClient.get(conf.file, { responseType: 'text' })),
+        catchError((err: HttpErrorResponse) => {
+          if (err.error instanceof ErrorEvent) {
+            console.error('An error occurred:', err.error.message);
+          } else {
+            console.error(
+              `Backend returned code ${err.status}, ` +
+              `body was: ${err.error}`);
+          }
+          return throwError('Something bad happened!');
+          //of(err.message)
+        })
       ).subscribe(
-        fileData => {this.nonJsonData = fileData; }
+        fileData => { this.nonJsonData = fileData; }
         ,
-        err => {this.nonJsonData = JSON.stringify(err); });
+        err => { this.nonJsonData = JSON.stringify(err); });
   }
 
   loadFullResponse() {
