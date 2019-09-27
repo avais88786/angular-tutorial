@@ -251,6 +251,128 @@
           }
         }
       }
+    },
+    "app-heroes-navigation": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-heroes-navigation",
+      "sourceRoot": "projects/app-heroes-navigation/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-heroes-navigation",
+            "index": "projects/app-heroes-navigation/src/index.html",
+            "main": "projects/app-heroes-navigation/src/main.ts",
+            "polyfills": "projects/app-heroes-navigation/src/polyfills.ts",
+            "tsConfig": "projects/app-heroes-navigation/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/app-heroes-navigation/src/favicon.ico",
+              "projects/app-heroes-navigation/src/assets"
+            ],
+            "styles": [
+              "projects/app-heroes-navigation/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-heroes-navigation/src/environments/environment.ts",
+                  "with": "projects/app-heroes-navigation/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-heroes-navigation:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-heroes-navigation:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-heroes-navigation:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-heroes-navigation/src/test.ts",
+            "polyfills": "projects/app-heroes-navigation/src/polyfills.ts",
+            "tsConfig": "projects/app-heroes-navigation/tsconfig.spec.json",
+            "karmaConfig": "projects/app-heroes-navigation/karma.conf.js",
+            "assets": [
+              "projects/app-heroes-navigation/src/favicon.ico",
+              "projects/app-heroes-navigation/src/assets"
+            ],
+            "styles": [
+              "projects/app-heroes-navigation/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-heroes-navigation/tsconfig.app.json",
+              "projects/app-heroes-navigation/tsconfig.spec.json",
+              "projects/app-heroes-navigation/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-heroes-navigation/e2e/protractor.conf.js",
+            "devServerTarget": "app-heroes-navigation:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-heroes-navigation:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "tour-of-heroes"
