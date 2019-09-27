@@ -41,7 +41,8 @@ export class LandingPageComponent implements OnInit {
       headers: new HttpHeaders({
         'Content-Type': 'xml',
         'Authorization': 'my-auth'
-      })
+      }),
+      observe : 'response' as 'body'
     };
 
     httpOpts.headers.set('Authorization', 'new-auth');
