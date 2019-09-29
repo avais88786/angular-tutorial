@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './modules/crisis-center/components/crisis-list/crisis-list.component';
+import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 
 
 const routes: Routes = [
@@ -16,8 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'hero-list',
-        loadChildren: () => import('./modules/crisis-center/crisis-center.module')
-          .then(mod => mod.CrisisCenterModule),
+        component: HeroesListComponent
       }
     ]
   }
