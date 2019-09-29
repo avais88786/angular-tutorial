@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-tutorial/src/app/app.module';
 import { HttpInterceptorService } from './modules/my-httpclient/services/http-interceptor.service';
+import { HerosNavigationAppModule } from 'projects/app-heroes-navigation/src/app/app.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpInterceptorService } from './modules/my-httpclient/services/http-in
     AppRoutingModule,
     NoopAnimationsModule,
     TemplateModule,
-    HttpClientModule
+    HttpClientModule,
+    //HerosNavigationAppModule.forRoot()
     // TourOfHeroesModule,
     //adsModule
     //AdsSharedModule.forRoot()
