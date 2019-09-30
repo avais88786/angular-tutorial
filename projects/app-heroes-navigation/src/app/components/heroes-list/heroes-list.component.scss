@@ -22,7 +22,7 @@
     left: .1em;
   }
   .heroes li.selected {
-    background-color: #CFD8DC;
+    background-color: green;
     color: white;
   }
   .heroes li.selected:hover {
@@ -42,4 +42,9 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+
+  .selected {
+    background-color: green !important; 
+    color: white;
   }

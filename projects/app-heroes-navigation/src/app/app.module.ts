@@ -12,11 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
+import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesListComponent
+    HeroesListComponent,
+    HeroDetailsComponent
   ],
   imports: [
     //BrowserModule,
