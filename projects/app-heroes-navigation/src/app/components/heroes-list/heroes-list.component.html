@@ -2,7 +2,7 @@
     <mat-list style="margin-top:15px;" class="heroes">
             <!-- (click)="selectHero(hero)" -->
         <mat-list-item *ngFor="let hero of heroes" style="margin-bottom:5px;">
-            <button color="primary" mat-raised-button routerLink='/hero-nav/hero/{{hero.id}}'
+            <button color="primary" mat-raised-button routerLink='../hero/{{hero.id}}'
                 [class.selected]="hero === selectedHero || hero.id === selectedId" matBadge="{{hero.id}}" matBadgeColor="accent" style="width: 100%;">
                 {{hero.name}}
             </button>
