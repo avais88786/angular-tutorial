@@ -23,7 +23,7 @@ export class HeroDetailsComponent implements OnInit {
 
   goBack(){
     this.hero$.subscribe(hero => {
-      this.router.navigate(['/hero-nav/hero-list', {id: hero.id, foo: 'bar'}]);
+      this.router.navigate(['/hero-nav/load/hero-list', {id: hero.id, foo: 'bar'}]);
     });
   }
 

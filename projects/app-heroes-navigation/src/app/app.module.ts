@@ -13,15 +13,19 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
+import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesListComponent,
-    HeroDetailsComponent
+    HeroDetailsComponent,
+    ComposeMessageComponent
   ],
   imports: [
     //BrowserModule,
+    FormsModule,
     CommonModule,
     AppRoutingModule,
     MatCardModule,

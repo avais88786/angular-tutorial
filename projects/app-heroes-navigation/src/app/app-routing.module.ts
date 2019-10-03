@@ -4,11 +4,12 @@ import { AppComponent } from './app.component';
 import { CrisisListComponent } from './modules/crisis-center/components/crisis-list/crisis-list.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
+import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
 
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'load',
     component: AppComponent,
     children: [
       {
@@ -23,6 +24,11 @@ const routes: Routes = [
       {
         path: 'hero/:id',
         component: HeroDetailsComponent
+      },
+      {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup'
       }
     ]
   }
