@@ -1,6 +1,12 @@
+<pre>
+    <code>
+        Additional (optional) route params are provided to the routerlink as
+        <b>{{"< [routerLink]=\"[crisis.Id, {foo: 'foo'}]\" [state]=\"{data: crisis.Description}\" >"}} </b>
+    </code>
+  </pre>
 <ul class="crises">
     <li *ngFor="let crisis of crises$ | async" [class.selected]="crisis.Id === selectedId">
-        <a [routerLink]="[crisis.Id]">
+        <a [routerLink]="[crisis.Id, {foo: 'foo'}]" [state]="{data: crisis.Description}">
             <span class="badge">{{ crisis.Id }}</span>{{ crisis.Description }}
         </a>
     </li>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { SelectivePreloadingStrategyService } from 'projects/app-heroes-navigation/src/app/services/selective-preloading-strategy.service';
 
 
 const routes: Routes = [
@@ -44,7 +45,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
-    { enableTracing: true }) // Debugging purposes
+    {
+      //enableTracing: true,
+      //preloadingStrategy: PreloadAllModules  -- PreLoad all modules asynchronously 
+      preloadingStrategy: SelectivePreloadingStrategyService
+    }) // Debugging purposes
   ],
   exports: [RouterModule]
 })

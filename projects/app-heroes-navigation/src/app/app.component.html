@@ -4,10 +4,13 @@
     <code>
         Router link here has '/hero-nav/crisis-center' which is absoulte path from 'localhost:4200' : &lt;a routerLink="/hero-nav/crisis-center" ... &gt;
         <b>An alternate to this is: </b>to use relative path (from current url) : &lt;a routerLink="crisis-center" ...  /&gt;
+        Inspect router object from '@angular/router' to see the tree hierarchy of configured routes under router.config property
     </code>
   </pre>
   <a routerLink="/hero-nav/load/crisis-center" routerLinkActive="navactive" style="margin:15px;">Crisis Center</a>
   <a routerLink="/hero-nav/load/hero-list" routerLinkActive="navactive" style="margin:15px;">Heroes</a>
+  <a routerLink="/hero-nav/load/admin/load" routerLinkActive="navactive" style="margin:15px;">Admin</a>
+  <a routerLink="/hero-nav/load/login" routerLinkActive="navactive" style="margin:15px;">Login</a>
   <a [routerLink]="[{outlets: { 'popup': ['compose']}}]" routerLinkActive="navactive">Contact</a>
 </nav>
 <router-outlet></router-outlet>

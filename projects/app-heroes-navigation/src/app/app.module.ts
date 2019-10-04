@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
 import { FormsModule } from '@angular/forms';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     MatBadgeModule,
     MatProgressSpinnerModule,
     MatSelectModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

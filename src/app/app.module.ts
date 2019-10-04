@@ -9,6 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-tutorial/src/app/app.module';
 import { HttpInterceptorService } from './modules/my-httpclient/services/http-interceptor.service';
 import { HerosNavigationAppModule } from 'projects/app-heroes-navigation/src/app/app.module';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,4 +29,11 @@ import { HerosNavigationAppModule } from 'projects/app-heroes-navigation/src/app
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(router: Router) {
+    const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+  }
+
+}

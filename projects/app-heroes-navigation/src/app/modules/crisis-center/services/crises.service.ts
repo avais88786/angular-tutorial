@@ -4,8 +4,14 @@ import { Observable, of } from 'rxjs';
 import { Crisis } from './crisis';
 import * as Casual from 'casual';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CrisesService {
+
+  getCrisis(id: number): Observable<Crisis> {
+    return of(new Crisis(id, Casual.sentence));
+  }
 
   constructor() { }
 
