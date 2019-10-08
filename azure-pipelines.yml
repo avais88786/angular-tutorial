@@ -21,6 +21,12 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+- task: CmdLine@2
+  inputs:
+    script: 'dir'
+    workingDirectory: '$(Build.SourcesDirectory)'
+  displayName: 'List source directory contents'
+
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/dist'
