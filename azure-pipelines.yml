@@ -20,3 +20,24 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/dist'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: true
+  displayName: 'Copy dist to ArtifactStagingDirectory'
+
+- task: CmdLine@2
+  inputs:
+    script: 'dir'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'List staging directory contents'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'build-prod-artifacts'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
