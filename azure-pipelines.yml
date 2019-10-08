@@ -25,7 +25,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'run build -- --prod --base-href /tutorial'
+    customCommand: 'run build -- --prod --base-href /tutorial/'
   displayName: 'build production mode'
 
 #- script: |
