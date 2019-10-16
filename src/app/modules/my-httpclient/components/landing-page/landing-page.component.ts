@@ -16,7 +16,7 @@ export interface ConfigData {
 })
 export class LandingPageComponent implements OnInit {
 
-  private config = '/assets/config.json';
+  private config = 'assets/config.json';
 
   simpleData: string;
   fullHttpResponse = { keys: [], data: null };
