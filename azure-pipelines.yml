@@ -49,6 +49,13 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copy dist to ArtifactStagingDirectory'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: 'DockerFile'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy DockerFile to dist folder'
+
 - task: CmdLine@2
   inputs:
     script: 'dir'
@@ -58,6 +65,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'build-prod-artifacts'
+    ArtifactName: 'dist'
     publishLocation: 'Container'
   displayName: 'Publish Build Artifacts'
