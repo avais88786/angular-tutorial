@@ -25,7 +25,9 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'run build -- --prod --base-href /tutorial'
+    customCommand: 'run build -- --prod --base-href /tutorial/ --deploy-url /tutorial/'
+    #ng build --prod --base-href /tutorial/ --deploy-url /assets/ this will set the src path to assets
+    # <link href="/assets/styles.xxxx.bundle.css" rel="styleshee...
   displayName: 'build production mode'
 
 #- script: |
