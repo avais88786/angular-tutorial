@@ -21,7 +21,7 @@ export class HeroService {
     return new Observable<Hero[]>((obss) => {
       setTimeout(() => {
         obss.next(HEROES);
-      }, 3000);
+      }, 1000);
     });
   }
 

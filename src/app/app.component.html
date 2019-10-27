@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -51,25 +42,14 @@
 </div>
 <div *ngIf="hideLandingPage">
   <!-- <app-heroes></app-heroes> -->
-  <button routerLink="tour-of-heroes">Give me a Tour Of Heroes</button>
-  <button routerLink="ads">Take me to ads</button>
-  <button routerLink="observables">Show me Observables</button>
-  <button routerLink="di">Talk about Dependency Injection</button>
-  <button routerLink="httpOps">Demonstrate HTTP Client operations</button>
-  <button routerLink="hero-nav/load">Teach me Navigaation using Crisis Center</button>
+  <button mat-raised-button color="primary" routerLink="tour-of-heroes">Give me a Tour Of Heroes</button>
+  <button mat-raised-button color="primary" routerLink="ads">Take me to ads</button>
+  <button mat-raised-button color="primary" routerLink="observables">Show me Observables</button>
+  <button mat-raised-button color="primary" routerLink="di">Talk about Dependency Injection</button>
+  <button mat-raised-button color="primary" routerLink="httpOps">Demonstrate HTTP Client operations</button>
+  <button mat-raised-button color="primary" routerLink="hero-nav/load">Teach me Navigation using Crisis Center</button>
 </div>
 
-Url {{urlDetails}}
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
+<!-- Url {{urlDetails}} -->
 
 <router-outlet></router-outlet>

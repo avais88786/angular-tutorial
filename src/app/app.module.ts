@@ -10,6 +10,7 @@ import { AppModule as adsModule, AdsSharedModule } from '../../projects/app-ads-
 import { HttpInterceptorService } from './modules/my-httpclient/services/http-interceptor.service';
 import { HerosNavigationAppModule } from 'projects/app-heroes-navigation/src/app/app.module';
 import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { Router } from '@angular/router';
     NoopAnimationsModule,
     TemplateModule,
     HttpClientModule,
+    MatButtonModule
     //HerosNavigationAppModule.forRoot()
     // TourOfHeroesModule,
     //adsModule

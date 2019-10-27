@@ -11,7 +11,7 @@ export class LandingPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    alert(environment.production);
+    alert(`production mode: ${environment.production}`);
   }
 
 }
