@@ -11,6 +11,7 @@ import { HttpInterceptorService } from './modules/my-httpclient/services/http-in
 import { HerosNavigationAppModule } from 'projects/app-heroes-navigation/src/app/app.module';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
     NoopAnimationsModule,
     TemplateModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModule
     //HerosNavigationAppModule.forRoot()
     // TourOfHeroesModule,
     //adsModule
