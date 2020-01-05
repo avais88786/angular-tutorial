@@ -6,9 +6,9 @@ metadata:
         kubernetes-tutorial: tour-of-heroes-service
 spec:
     #clusterIP: None
-    externalIPs:
-        - 10.2.3.4
-    type: NodePort
+    #externalIPs:
+    #    - 10.2.3.4
+    type: LoadBalancer
     ports:
         - name: node-port-1
           port: 80
