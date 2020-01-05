@@ -56,6 +56,13 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copy DockerFile to dist folder'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '*.yaml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy yaml files to dist folder'
+
 - task: CmdLine@2
   inputs:
     script: 'dir'
