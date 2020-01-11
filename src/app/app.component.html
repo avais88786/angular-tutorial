@@ -40,7 +40,7 @@
 <div *ngIf="!hideLandingPage">
   <app-template [countdown]="countdownTimer"></app-template>
 </div>
-<div *ngIf="hideLandingPage">
+<div class="container" *ngIf="hideLandingPage">
   <!-- <app-heroes></app-heroes> -->
   <!-- <button mat-raised-button color="primary" routerLink="tour-of-heroes">Give me a Tour Of Heroes</button>
   <button mat-raised-button color="primary" routerLink="ads">Take me to ads</button>
@@ -49,20 +49,22 @@
   <button mat-raised-button color="primary" routerLink="httpOps">Demonstrate HTTP Client operations</button>
   <button mat-raised-button color="primary" routerLink="hero-nav/load">Teach me Navigation using Crisis Center</button> -->
 
-  <div>
-      <div style="display: table; margin: 0 auto;">
-        <ngb-carousel #carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" >
-          <ng-template ngbSlide *ngFor="let image of images">
-            <div class="picsum-img-wrapper" style="width: 50%;">
-              <img [src]="image.imgSrc" alt="Random slide">
-            </div>
-            <div class="carousel-caption">
-                <button mat-raised-button color="primary" routerLink={{image.routeLink}}>{{image.buttonText}}</button>
-            </div>
-          </ng-template>
-        </ngb-carousel>
-      </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-12">
+      <ngb-carousel #carousel [showNavigationArrows]="true" [showNavigationIndicators]="true">
+
+        <ng-template ngbSlide *ngFor="let image of images">
+          <div class="picsum-img-wrapper">
+            <img [src]="image.imgSrc" alt="Random slide" style="height: 100%; width: 100%; object-fit: contain">
+          </div>
+          <div class="carousel-caption">
+            <button mat-raised-button color="primary" routerLink={{image.routeLink}}>{{image.buttonText}}</button>
+          </div>
+        </ng-template>
+      </ngb-carousel>
     </div>
+  </div>
 
 </div>
 
