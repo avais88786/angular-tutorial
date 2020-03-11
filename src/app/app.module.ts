@@ -12,6 +12,9 @@ import { HerosNavigationAppModule } from 'projects/app-heroes-navigation/src/app
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TemplateModule,
     HttpClientModule,
     MatButtonModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule
     //HerosNavigationAppModule.forRoot()
     // TourOfHeroesModule,
     //adsModule

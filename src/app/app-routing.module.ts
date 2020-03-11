@@ -40,6 +40,11 @@ const routes: Routes = [
     loadChildren: () => import('../../projects/app-heroes-navigation/src/app/app.module')
       .then(mod => mod.AppModule),
     //outlet: 'navRouterOutlet'
+  },
+  {
+    path: 'formly',
+    loadChildren: () => import('../app/modules/formly/formly.module')
+      .then(mod => mod.FormlyModule)
   }
 ];
 

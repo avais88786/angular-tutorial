@@ -1,0 +1,9 @@
+[{
+    "key": "email",
+    "type": "input",
+    "templateOptions": {
+      "label": "Email address",
+      "placeholder": "Enter email",
+      "required": true
+    }
+}]

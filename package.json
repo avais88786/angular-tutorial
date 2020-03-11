@@ -22,13 +22,16 @@
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
     "@ng-bootstrap/ng-bootstrap": "^5.1.2",
+    "@ngx-formly/schematics": "^5.5.14",
     "@types/node": "^12.7.3",
     "bootstrap": "^4.3.1",
     "casual": "^1.6.2",
     "rxjs": "~6.4.0",
     "terser": "^3.14.1",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@ngx-formly/core": "^5.0.0",
+    "@ngx-formly/bootstrap": "^5.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.0",

@@ -13,7 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   hideLandingPage = false;
   countdownTimer = 2;
   urlDetails: UrlSegment[] = [];
-  images = [1, 2, 3, 4, 5, 6].map((x: number) => {
+  images = [1, 2, 3, 4, 5, 6, 7].map((x: number) => {
 
     let rteLink: string;
     let btnText: string;
@@ -47,6 +47,11 @@ export class AppComponent implements OnInit, AfterViewInit {
       case 6:
       rteLink = 'hero-nav/load';
       btnText = 'Teach me Navigation using Crisis Center';
+      break;
+
+      case 7:
+      rteLink = 'formly';
+      btnText = 'Formly Learning';
       break;
 
     }
